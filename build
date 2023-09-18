@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo docker compose --file ./docker/compose.yml build\
+	--build-arg userId=$(id -u)\
+	--build-arg groupId=$(id -g);
+
+sudo chmod u+x ./project;
+./project start;
+sleep 3;
